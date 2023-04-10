@@ -1,1 +1,2 @@
-web: gunicorn django1stapp.wsgi
+web: python myApp.py runserver 0.0.0.0:8000
+
