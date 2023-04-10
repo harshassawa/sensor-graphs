@@ -1,0 +1,93 @@
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--	<title>Home Page</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--	<h1>Welcome to our website!</h1>-->
+
+<!--    <a href="http://127.0.0.1:8000/pour1">-->
+<!--      <button>Pour 1</button>-->
+<!--    </a>-->
+<!--<a href="http://127.0.0.1:8000/pour2">-->
+<!--      <button>Pour 2</button>-->
+<!--    </a>-->
+<!--<a href="http://127.0.0.1:8000/upload_pour1/">-->
+<!--      <button>Upload Pour 1 files</button>-->
+<!--    </a>-->
+<!--<a href="http://127.0.0.1:8000/pour1">-->
+<!--      <button>Upload Pour 2 files</button>-->
+<!--    </a>-->
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Customer Page</title>
+	<style>
+		body {
+			background-color: #1D2951;
+		}
+
+		button {
+			background-color: #4CAF50;
+			border: none;
+			color: white;
+			padding: 16px 32px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 24px;
+			margin: 4px 2px;
+			cursor: pointer;
+			border-radius: 25px;
+		}
+
+		.button-container {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.pour1-button,
+		.upload-pour1-button {
+			margin-right: 20px;
+		}
+		.pour2-button,
+		.upload-pour2-button {
+			margin-right: 20px;
+		}
+				        .container {
+            margin: 0 auto;
+            text-align: center;
+            color: white;
+            margin-top: 50px;
+            margin-right: 40px;
+}
+
+	</style>
+</head>
+<body>
+
+    <h2 class="container" style="color: white">Welcome back {{ username }}!</h2>
+    <br><br><br><br><br><br>
+	<div class="button-container">
+		<a href="http://127.0.0.1:8000/pour1" target="_blank">
+			<button class="pour1-button">Pour 1</button>
+		</a>
+
+	</div>
+    <br><br><br><br><br><br>
+	<div class="button-container">
+		<a href="http://127.0.0.1:8000/pour2" target="_blank">
+			<button class="pour2-button">Pour 2</button>
+		</a>
+
+	</div>
+
+</body>
+</html>
+
+

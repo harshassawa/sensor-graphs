@@ -1,0 +1,79 @@
+{% for file_name, file_content in file_data %}
+    <h2>{{ file_name }}</h2>
+    <p>{{ file_content }}</p>
+{% endfor %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title >Pour 1</title>
+	<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+	<style>
+	.form-check {
+			color: white;
+			position: relative;
+			margin-left: 200px;
+			margin-bottom: 40px;
+		}
+	.button {
+		position: relative;
+		margin-left: 190px;
+		margin-bottom: 40px;
+	}
+
+	</style>
+</head>
+<body style="background-color:#1D2951">
+	<h1 style="color: white; margin-left: 80px" >Temperature Graphs</h1>
+	<div style="height : 570px">
+		<img align="right" src="{% static 'django1stapp\pour1.jpg'%}">
+
+		<form action = "" method = "post">
+			{%csrf_token%}
+		  <div  class = "form-check">
+			<input style="margin-top: 30px" type = "checkbox" value = "R1 Core" id ="R1 Core" name="selected_sheets">
+			<label for = "R1 Core">R1 Core</label>
+		  </div>
+		  <div class = "form-check">
+			<input type = "checkbox" value = "R2 Core" id ="R2 Core" name="selected_sheets">
+			<label for = "R2 Core">R2 Core</label>
+		  </div>
+		  <div class = "form-check">
+			<input type = "checkbox" value = "R2 Top" id ="R2 Top" name="selected_sheets">
+			<label for = "R2 Top">R2 Top</label>
+		  </div>
+		  <div class = "form-check">
+			<input type = "checkbox" value = "R3 Core" id ="R3 Core" name="selected_sheets">
+			<label for = "R3 Core">R3 Core</label>
+		  </div>
+			<div class = "form-check">
+			<input type = "checkbox" value = "R3 Top" id ="R3 Top" name="selected_sheets">
+			<label for = "R3 Top">R3 Top</label>
+		  </div>
+			<div class = "form-check">
+			<input type = "checkbox" value = "R4 Core" id ="R4 Core" name="selected_sheets">
+			<label for = "R4 Core">R4 Core</label>
+		  </div>
+			<div class = "form-check">
+			<input type = "checkbox" value = "R4 Top" id ="R4 Top" name="selected_sheets">
+			<label for = "R4 Top">R4 Top</label>
+		  </div>
+			<div class = "form-check">
+			<input type = "checkbox" value = "R5 Core" id ="R5 Core" name="selected_sheets">
+			<label for = "R5 Core">R5 Core</label>
+		  </div><br>
+			<button class = "button" type = "Submit">Update Graph</button><br>
+		</form>
+	</div>
+	<div>
+		<h2>{{ div1|safe }}</h2>
+	</div>
+
+	<div>
+		<h2>{{ div2|safe }}</h2>
+        
+        
+	</div>
+</body>
+</html>

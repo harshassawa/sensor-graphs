@@ -1,0 +1,3 @@
+D:\Naval Malpani\Django>venv\Scripts\activate.bat
+cd mysite
+D:\Naval Malpani\Django\mysite>python manage.py runserver

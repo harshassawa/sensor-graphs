@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <style>
+        body {
+            background-color: #1D2951;
+            color: white;
+        }
+
+        input[type=text], input[type=password] {
+            width: 30%;
+            padding: 10px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            border-radius: 25px;
+            color: white;
+            background-color: #1D2951;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            border-radius: 25px;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        .container {
+            padding: 16px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        span.error {
+            color: red;
+        }
+        .container {
+            margin: 0 auto;
+            text-align: center;
+}
+    </style>
+</head>
+<body>
+
+<h1 style="margin-top:50px" class="container">Login</h1>
+<br><br>
+<form method="post">
+    {% csrf_token %}
+    <div class="container">
+        {% if error %}
+            <span class="error">{{ error }}</span>
+        {% endif %}
+        <label for="username"><b>Username</b></label>
+        <input style="margin-left:20px" type="text" placeholder="Enter Username" name="username" required>
+    </div><br>
+    <div class="container">
+        {% if error %}
+            <span class="error">{{ error }}</span>
+        {% endif %}
+        <label for="password"><b>Password</b></label>
+        <input style="margin-left:20px" type="password" placeholder="Enter Password" name="password" required>
+    </div>
+    <div class="container">
+        {% if error %}
+            <span class="error">{{ error }}</span>
+        {% endif %}
+        <button type="submit">Login</button>
+    </div>
+</form>
+
+</body>
+</html>

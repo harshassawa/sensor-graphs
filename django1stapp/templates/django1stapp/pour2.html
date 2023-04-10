@@ -1,0 +1,71 @@
+{% for file_name, file_content in file_data %}
+    <h2>{{ file_name }}</h2>
+    <p>{{ file_content }}</p>
+{% endfor %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title >Pour 2</title>
+	<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+	<style>
+	.form-check {
+			color: white;
+			position: relative;
+			margin-left: 200px;
+			margin-bottom: 40px;
+		}
+	.button {
+		position: relative;
+		margin-left: 190px;
+		margin-bottom: 40px;
+	}
+
+	</style>
+</head>
+<body style="background-color:#1D2951">
+	<h1 style="color: white; margin-left: 80px" >Temperature Graphs</h1>
+	<div style="height : 570px">
+		<img align="right" src="{% static 'django1stapp\pour2.jpg'%}">
+
+		<form action = "" method = "post">
+			{%csrf_token%}
+		  <div  class = "form-check">
+			<input style="margin-top: 60px" type = "checkbox" value = "R6 Top" id ="R6 Top" name="selected_sheets">
+			<label for = "R6 Top">R6 Top</label>
+		  </div>
+		  <div class = "form-check">
+			<input type = "checkbox" value = "R6 Core" id ="R6 Core" name="selected_sheets">
+			<label for = "R6 Core">R6 Core</label>
+		  </div>
+		  <div class = "form-check">
+			<input type = "checkbox" value = "R6 Bottom" id ="R6 Bottom" name="selected_sheets">
+			<label for = "R6 Bottom">R6 Bottom</label>
+		  </div>
+		  <div class = "form-check">
+			<input type = "checkbox" value = "R7 Top" id ="R7 Top" name="selected_sheets">
+			<label for = "R7 Top">R7 Top</label>
+		  </div>
+			<div class = "form-check">
+			<input type = "checkbox" value = "R7 Core" id ="R7 Core" name="selected_sheets">
+			<label for = "R7 Core">R7 Corep</label>
+		  </div>
+			<div class = "form-check">
+			<input type = "checkbox" value = "R7 Bottom" id ="R7 Bottom" name="selected_sheets">
+			<label for = "R7 Bottom">R7 Bottom</label>
+		  </div><br>
+			<button class = "button" type = "Submit">Update Graph</button><br>
+		</form>
+	</div>
+	<div>
+		<h2>{{ div1|safe }}</h2>
+	</div>
+
+	<div>
+		<h2>{{ div2|safe }}</h2>
+        
+        
+	</div>
+</body>
+</html>
